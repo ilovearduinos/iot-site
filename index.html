@@ -121,7 +121,16 @@ function showDoorbell(value, createdAt, flash) {
   // Right now this just prints the raw value ("A"). Turn it into a real message:
   //   "A" -> "Someone is at the door!"   "B" -> ...   "C" -> ...
   // =====================
-  let message = "Button " + value + " was pressed";
+ let message;
+  if (value === "A") {
+    message = "Someone just scored!";
+  } else if (value === "B") {
+    message = "Who is it?";
+  } else if (value === "C") {
+    message = "It's JALEN BRUNSON!";
+  } else {
+    message = "Button " + value + " was pressed";
+  }
 
   document.getElementById("doorbellStatus").textContent = message;
   document.getElementById("doorbellTime").textContent = "at " + new Date(createdAt).toLocaleTimeString();
