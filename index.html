@@ -19,12 +19,17 @@
   .flash { animation: flash .6s; }
   @keyframes flash { from { background: #ffe66d; } to { background: #fff; } }
   #errors { color: #b00; white-space: pre-wrap; }
+  body { background: #006BB6; color: #ffffff; }
+h1 { color: #F58426; }
+.card { background: #ffffff; color: #006BB6; }
+#jersey { font-size: 140px; font-weight: 900; color: #F58426; text-align: center; }
 </style>
 </head>
 <body>
 
 <h1>My IoT Page</h1>
-<p class="small">Adafruit IO user: <span id="whoami">?</span> &nbsp;|&nbsp; <a href="#" id="changeKey">change key</a></p>
+<div id="jersey">11</div>
+  <p class="small">Adafruit IO user: <span id="whoami">?</span> &nbsp;|&nbsp; <a href="#" id="changeKey">change key</a></p>
 
 <!-- ================= PROJECT A : Arduino -> Website ================= -->
 <div class="card" id="cardA">
