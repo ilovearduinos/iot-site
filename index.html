@@ -53,6 +53,12 @@ h1 { color: #F58426; }
 </div>
 
 <div class="card">
+  <h2>LED Matrix Message</h2>
+  <input id="matrixText" type="text" maxlength="40" placeholder="Type a message...">
+  <button class="orange" onclick="sendMatrix()">Send</button>
+</div>
+  
+<div class="card">
   <h3>Problems?</h3>
   <div id="errors" class="small">None yet.</div>
 </div>
@@ -95,7 +101,13 @@ function showError(msg) {
   document.getElementById("errors").textContent = msg;
   console.error(msg);
 }
-
+function sendMatrix() {
+  const box = document.getElementById("matrixText");
+  const text = box.value.trim();
+  if (text === "") return;
+  sendLamp("player:" + text);
+  box.value = "";
+}
 /* =====================================================================
    PROJECT A - read the doorbell feed every POLL_MS milliseconds
    ===================================================================== */
